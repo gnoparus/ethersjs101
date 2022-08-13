@@ -656,7 +656,18 @@ async function main() {
   const latestBlock = await provider.getBlockNumber();
   const events = await contract.queryFilter("Swap", 7386152);
 
-  console.log(events);
+  //   console.log(events);
+  events.map((event) => {
+    console.log(`--------------------------------------------`);
+    console.log(`blockNumber ${event.blockNumber}`);
+    console.log(`sender ${event.args.sender}`);
+    console.log(`recipient ${event.args.recipient}`);
+    console.log(`amount0 ${event.args.amount0}`);
+    console.log(`amount1 ${event.args.amount1}`);
+    console.log(`sqrtPriceX96 ${event.args.sqrtPriceX96}`);
+    console.log(`liquidity ${event.args.liquidity}`);
+    console.log(`tick ${event.args.tick}`);
+  });
 
   console.log("hello");
 }
