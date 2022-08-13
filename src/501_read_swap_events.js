@@ -662,8 +662,8 @@ async function main() {
     console.log(`blockNumber ${event.blockNumber}`);
     console.log(`sender ${event.args.sender}`);
     console.log(`recipient ${event.args.recipient}`);
-    console.log(`amount0 ${event.args.amount0}`);
-    console.log(`amount1 ${event.args.amount1}`);
+    console.log(`amount0 ${ethers.utils.formatEther(event.args.amount0)}`);
+    console.log(`amount1 ${ethers.utils.formatEther(event.args.amount1)}`);
     console.log(`sqrtPriceX96 ${event.args.sqrtPriceX96}`);
     console.log(`liquidity ${event.args.liquidity}`);
     console.log(`tick ${event.args.tick}`);
